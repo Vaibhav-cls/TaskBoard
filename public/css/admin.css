@@ -1,0 +1,182 @@
+.cards-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.cards-container .card{
+  padding: 10px 20px;
+  background-color: #707070;
+  color: white;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  border-radius: 20px;
+  background-image: url("/images/noise_bg.png");
+  background-size: contain;
+  background-blend-mode: overlay;
+}
+.cards-container .card .heading
+{
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+}
+.cards-container .card .heading i{
+  margin-right: 10px;
+}
+.cards-container .card .task{
+  display: flex;
+  width: 100%;
+  font-size: 15px;
+  justify-content: space-between;
+  align-items: center
+}
+.cards-container .card .progress .bar{
+  background-color: #1B1B1B;
+  width: 100%;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.cards-container .card .progress .bar .inner-meter{
+  height: 100%;
+  border-radius: 50px;
+  background-color: #FF5E5E;
+}
+.cards-container .card .progress .information{
+  display: flex;
+  font-size: 12px;
+  margin-top: 7px;
+  justify-content: space-between;
+}
+.cards-container .card .data{
+  width: 100%;
+}
+.cards-container .card ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 10px;
+  justify-content: space-between;
+}
+.cards-container .card ul li{
+  margin-top: 10px;
+
+}
+.cards-container .card span a{
+  transition: all 0.5s ease;
+  position: relative;
+}
+.cards-container .card span a:hover{
+  color: rgb(39, 255, 39);
+}
+.fa-arrow-up-right-from-square{
+  position: absolute;
+  right: 0px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.cards-container .card a:hover .fa-arrow-up-right-from-square{
+  right: -20px;
+  z-index: 0;
+}
+.cards-container .ut-card{
+  position: relative;
+  overflow: hidden;
+}
+.cards-container .ut-card .card-overlay{
+  position: absolute;
+  bottom: -40px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  background: rgb(112,112,112);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(0deg, rgba(112,112,112,1) 30%, rgba(112,112,112,0.7371323529411764) 72%, rgba(112,112,112,0.5942752100840336) 99%);
+}
+.cards-container .ut-card:hover .card-overlay{
+  bottom: 0px;
+}
+.table{
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.table p{
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+table .links{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+table .links button{
+  background-color: transparent;
+  width: fit-content;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+table .links button i{
+  color: red;
+  font-size: 20px;
+}
+table .links button:disabled i{
+  color: rgb(85, 85, 85);
+  font-size: 20px;
+}
+table .fa-user-pen{
+  color: dodgerblue;
+}
+table .fa-eye{
+  color: rgb(0, 255, 0);
+}
+table .links a i,
+table .links button i{
+  font-size: 20px;
+  margin-right: 10px;
+}
+table .links a,
+table .links .active-btn{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: left;
+  width: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.5s;
+}
+table .links a:hover,
+table .links .active-btn:hover{
+  width: 102px
+}
+table .links .eye:hover,
+table .links .eye:hover .fa-eye{
+  background-color: rgb(0, 255, 0);
+  color: black;
+}
+table .links .edit:hover,
+table .links .edit:hover .fa-user-pen{
+  background-color: dodgerblue;
+  color: black;
+}
+table .links .active-btn:hover,
+table .links .active-btn:hover .fa-trash-can{
+  background-color: #ff0000;
+  color: white;
+}
+.inactive-btn{
+  cursor: not-allowed !important;
+}

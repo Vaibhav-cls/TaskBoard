@@ -1,0 +1,27 @@
+body{
+    display: flex;
+}
+.container {
+    width: calc(100% - 150px);
+    padding: 20px 50px 0px 50px;
+  }
+.overlap-cover{
+    width: 150px;
+}
+nav{
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    box-shadow: #f8deb84d 0px 7px 29px 0px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 85px;
+    height: 85px;
+    padding: 10px;
+}

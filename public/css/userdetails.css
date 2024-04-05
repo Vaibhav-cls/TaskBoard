@@ -1,0 +1,105 @@
+.details-container {
+  color: #ffffff;
+  display: flex;
+  height: 250px;
+  margin-top: 10px;
+  background-color: #27292c;
+  margin-bottom: 20px;
+}
+.left-card,
+.right-card {
+  flex-basis: 50%;
+}
+.left-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-right: 2px dashed rgb(24, 24, 24);
+}
+.left-card p {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.left-card .action-btn {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.left-card .action-btn a {
+  padding: 5px;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+.at-btn{
+    color: #00e600;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.at-btn:hover {
+  color: rgb(49, 49, 49);
+  background-color: #00e600;
+}
+.ed-btn{
+    color: #1e90ff;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.ed-btn:hover {
+    background-color: #1e90ff;
+    color: rgb(49, 49, 49);
+}
+.left-card .action-btn button {
+  background-color: transparent;
+  border: none;
+}
+.left-card .action-btn button i {
+  font-size: 20px;
+  color: red;
+}
+.right-card .card {
+  padding: 10px 20px;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-size: contain;
+  background-blend-mode: overlay;
+}
+.right-card .card .heading {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+.right-card .card .heading i {
+  margin-right: 10px;
+}
+.right-card .card .task {
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+.right-card .card .progress .bar {
+  background-color: #1b1b1b;
+  width: 100%;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.right-card .card .progress .bar .inner-meter {
+  height: 100%;
+  border-radius: 50px;
+  background-color: #ff5e5e;
+}
+.right-card .card .progress .information {
+  display: flex;
+  font-size: 14px;
+  margin-top: 7px;
+  justify-content: space-between;
+}

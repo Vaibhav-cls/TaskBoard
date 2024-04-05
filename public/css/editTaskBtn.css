@@ -1,0 +1,27 @@
+table .fa-user-pen{
+    color: dodgerblue;
+}
+table a i{
+  font-size: 20px;
+  margin-right: 10px;
+}
+table .edit{
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: left;
+  width: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.5s;
+}
+table .edit:hover{
+  width: 105px
+}
+table .edit:hover,
+table .edit:hover .fa-user-pen{
+  background-color: dodgerblue;
+  color: black;
+}

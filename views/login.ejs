@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <div class="outer-container">
+      <div class="left-section">
+        <div class="welcome-card">
+          <div class="logo-heading">
+            <img src="/images/light_logo.png" alt="logo.png">
+            <div class="inner-block" style="text-align: left;">
+              <h1>TaskBoard</h1>
+              <p class="tagline">&nbsp;&nbsp;Your Gateway to Streamlined Success.</p>
+            </div>
+          </div>
+          <p class="list-heading">Manage your team with:</p>
+          <p class="list-points">Easy user management: Add, remove, and update team members with just a few clicks.</p>
+          <p class="list-points">Role-based access control: Assign different roles and permissions to team members based on their responsibilities.</p>
+          <p class="list-points">Task assignment and delegation: Efficiently assign tasks to team members, set deadlines, and track progress.</p>
+          <p class="list-points">Real-time updates: Stay informed with instant notifications on task assignments, updates, and comments.</p>
+          <p class="list-points">Performance tracking: Monitor individual and team performance with comprehensive analytics and reporting tools.</p>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="login-form-parent-container">
+          <div class="login-form-child-container">
+            <form method="post" action="/login">
+              <h2>Sign In</h2>
+              <hr/>
+              <div class="field">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder=" "
+                  autocomplete="username"
+                  required
+                />
+                <label for="username">Username</label>
+              </div>
+              <div class="field">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder=" "
+                  required
+                />
+                <label for="password">Password</label>
+              </div>
+              <button class="btn btn-1">
+                Login <i class="fa-solid fa-right-to-bracket"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

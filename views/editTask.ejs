@@ -1,0 +1,71 @@
+<% layout("/layouts/boilerplate") -%>
+<head>
+  <link rel="stylesheet" href="/css/new.css" />
+  <title>Edit Task</title>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Task</h2>
+    <%if (user.type_of_user.toString() == "admin"){%>
+    <form method="POST" action="/admin/<%=id%>/<%=id2%>/<%=id3%>?_method=PUT">
+      <div class="field">
+        <input type="text" name="name" value="<%=info.name%>"/>
+        <label for="name">Name</label>
+      </div>
+      <div class="field">
+        <textarea type="text" name="description"><%=info.description%></textarea>
+        <label for="description">Description</label>
+      </div>
+
+      <select
+        name="status"
+        style="display: block; color: #d4d4d4; margin: 20px 0px 10px 0px"
+      >
+        <option value="true" style="background-color: #2c2c2c">
+          Completed
+        </option>
+        <option value="false" style="background-color: #2c2c2c">Pending</option>
+      </select>
+      <div class="field">
+        <input
+          type="date"
+          name="end_date"
+          required
+          value="<%=info.end_date%>"
+        />
+        <label for="end_date">End Date</label>
+      </div>
+      <button>Make Changes</button>
+    </form>
+    <%}else{%>
+    <form method="POST" action="/user/<%=id%>/<%=id2%>?_method=PUT">
+      <div class="field">
+        <input type="text" name="name" value="<%=info.name%>" disabled title="Cannot edit the task name"  style="color: gray;cursor: not-allowed;"/>
+        <label for="name">Name</label>
+      </div>
+      <div class="field">
+        <textarea type="text" name="description" disabled title="Cannot edit the task description"  style="color: gray;cursor: not-allowed;"><%=info.description%></textarea>
+        <label for="description">Description</label>
+      </div>
+      <select
+        name="status"
+        style="display: block; color: #dfdfdf; margin: 20px 0px 10px 0px">
+        <option value="true" style="background-color: #2c2c2c">
+          Completed
+        </option>
+        <option value="false" style="background-color: #2c2c2c">Pending</option>
+      </select>
+      <div class="field">
+        <input
+          type="date"
+          name="end_date"
+          required
+          value="<%=info.end_date%>"
+        />
+        <label for="end_date">End Date</label>
+      </div>
+      <button>Make Changes</button>
+    </form>
+    <%}%>
+  </div>
+</body>

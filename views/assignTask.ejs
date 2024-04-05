@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate") -%>
+<head>
+    <link rel="stylesheet" href="/css/new.css">
+    <title>Assign Task</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Assigning task to: <%=user.username%></h2>
+        <form method="POST" action="/admin/<%=id%>/<%=user._id%>/dashboard">
+            <div class="field">
+                <input type="text" name="name" placeholder=" ">
+                <label for="name">Task name</label>
+            </div>
+            <div class="field">
+                <input type="text" name="description" placeholder=" ">
+                <label for="description">Task Description</label>
+            </div>
+            <label for="status" style="display: block;color: #6d6d6d;margin-top: 10px;color: dodgerblue;">Status</label>
+            <select name="status">
+                <option value="true" style="background-color:  #2c2c2c;">Completed</option>
+                <option value="false" style="background-color:  #2c2c2c;">Pending</option>
+            </select>
+            <div class="field">
+                <input type="date" name="end_date" required>
+                <label for="end_date">End Date</label>
+            </div>
+            <button>Proceed</button>
+        </form>
+    </div>
+</body>
+</html>

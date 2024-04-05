@@ -1,0 +1,107 @@
+<% layout("/layouts/boilerplate") -%>
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <% layout("/layouts/loginHeader") -%>
+  <div class="cards-container">
+    <div class="card">
+      <div class="heading">
+        <p><i class="fa-solid fa-bars-progress"></i> &nbsp;Task Analysis</p>
+      </div>
+      <div class="task">
+        <span
+          >Assigned Task:
+          <span id="assigned" style="color: #ff9100"
+            ><%=totalTaskCount%></span
+          ></span
+        >
+        <span
+          >Completed Task:
+          <span id="inprogress" style="color: rgb(0, 255, 0)"
+            ><%=totalTaskCount-progressTask%></span
+          ></span
+        >
+      </div>
+      <div class="progress">
+        <p style="font-size: 15px">Progress</p>
+        <div class="bar">
+          <div id="meter" class="inner-meter"></div>
+        </div>
+        <div class="information">
+          <p id="result"></p>
+          <p>
+            <%=totalTaskCount-progressTask %> / <%= totalTaskCount %> Completed
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="align-items: center">
+      <div class="heading">
+        <p><i class="fa-solid fa-people-group"></i> &nbsp;Team Analytics</p>
+      </div>
+      <div class="data">
+        <ul>
+          <li><p>Team Size: <%=usersCount%></p></li>
+          <li><p>Admin users: <%=adminUsersCount%></p></li>
+          <li><p>Normal users: <%=usersCount - adminUsersCount%></p></li>
+        </ul>
+      </div>
+      <span>
+        <a href="/admin/<%= info._id%>/new"
+          >Add new member <i class="fa-solid fa-arrow-up-right-from-square"></i
+        ></a>
+      </span>
+    </div>
+    <div class="card ut-card">
+      <div class="heading">
+        <p><i class="fa-solid fa-list-check"></i> &nbsp;Unassigned Tasks</p>
+      </div>
+      <div class="list">
+        <ul>
+          <li><p>Prepare Monthly Financial Report</p></li>
+          <li><p>Content Creation for Blog Post</p></li>
+          <li><p>Inventory Management</p></li>
+          <li><p>Employee Performance Review</p></li>
+        </ul>
+      </div>
+      <div class="card-overlay">
+        <a href="#">view more</a>
+      </div>
+    </div>
+  </div>
+  <div class="table">
+    <p>Team Information</p>
+    <table>
+      <tr>
+        <th>Full name</th>
+        <th>Username</th>
+        <th>Type of User</th>
+        <th>Action</th>
+      </tr>
+      <%for (all of allUsers){%>
+      <tr>
+        <td><%=all.first_name%> <%=all.last_name%></td>
+        <td><%=all.username%></td>
+        <td style="text-transform: capitalize;"><%=all.type_of_user%></td>
+        <td class="links">
+          <a href="/admin/<%=info._id%>/<%=all._id%>/dashboard" class="eye"><i class="fa-regular fa-eye" title="View dashboard"></i>View</a>
+          &nbsp;&nbsp;
+          <a href="/admin/<%=info._id%>/<%=all._id%>/edit" class="edit"><i class="fa-solid fa-user-pen" title="Edit User"></i>Edit user</a>
+          <% if(info._id.toString() !== all._id.toString()){ %> &nbsp;&nbsp;
+          <form
+            action="/admin/<%=info._id%>/<%=all._id%>?_method=DELETE"
+            method="POST">
+            <button class="active-btn"><i class="fa-regular fa-trash-can" title="Remove User"></i>Remove</button>
+          </form>
+          <%}else{%> &nbsp;&nbsp;
+          <button disabled class="inactive-btn" title="You cannot remove yourself"><i class="fa-regular fa-trash-can"></i></button>
+          <%}%>
+        </td>
+      </tr>
+      <%}%>
+    </table>
+  </div>
+  
+</body>

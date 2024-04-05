@@ -1,0 +1,89 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    color: whitesmoke;
+    background-color: #2c2c2c;
+}
+.form-container form{
+    width: 40%;
+    height: 100%;
+    margin-top: 20px;
+}
+/* .form-container form input{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(122, 122, 122);
+} */
+.form-container form .field{
+    position: relative;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.form-container form .field label{
+    position: absolute;
+    left: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #6d6d6d;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-container form .field input,
+.form-container form .field textarea{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    color: #ffdead;
+    display: block;
+    border-bottom: 1px solid #6d6d6d;
+}
+.form-container form .field input:focus,
+.form-container form .field textarea:focus{
+    border-color: dodgerblue;
+}
+.form-container form .field input:focus + label,
+.form-container form .field input:not(:placeholder-shown) + label,
+.form-container form .field textarea:focus + label,
+.form-container form .field textarea:not(:placeholder-shown) + label{
+    top: 0px;
+    left: 1px;
+    font-size: 16px;
+    color: dodgerblue;
+}
+.form-container form .field textarea{
+    border: 1px solid rgb(73, 73, 73);
+    height: 150px;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+}
+select{
+    width: 50%;
+    padding: 10px 5px;
+    position: relative;
+    background-color: transparent;
+    color: white;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+form button{
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-top: 20px;
+}

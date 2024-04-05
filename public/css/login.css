@@ -1,0 +1,212 @@
+.outer-container{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.left-section{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #afafaf;
+    text-align: center;
+    border-right: 1px solid rgb(73, 73, 73);
+}
+.left-section .welcome-card{
+    text-align: left;
+    width: 450px;
+}
+.left-section .welcome-card .logo-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15161A;
+}
+.left-section .welcome-card .logo-heading img{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+.tagline{
+    font-size: 12px;
+}
+.list-heading{
+    font-size: 20px;
+    margin-top: 28px;
+}
+.list-points{
+    position: relative;
+    margin-top: 10px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+.list-points::before{
+    content: '\2713';
+    position: absolute;
+    left: 0px;
+    color: #adff2f;
+    top: 0px;
+}
+.right-section{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form-parent-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.login-form-child-container{
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    width: 35rem;
+}
+hr{
+    border:2px solid rgb(66, 66, 66);
+}
+.login-form-child-container h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #ffdead;
+}
+.login-form-child-container form{
+    width: 100%;
+    padding: 20px 45px;
+}
+.login-form-child-container form .field{
+    position: relative;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.login-form-child-container form label{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6d6d6d;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.login-form-child-container form input{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    color: #ffdead;
+    display: block;
+    border-bottom: 1px solid #6d6d6d;
+}
+.login-form-child-container form input:focus{
+    border-color: dodgerblue;
+}
+input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: 0px;
+    left: 1px;
+    font-size: 18px;
+    color: dodgerblue;
+  }
+.btn{
+    background-color: bisque;
+    position: relative;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+    cursor:pointer;
+    transition: all 0.2s ease-in-out;
+}
+.btn-1{
+    background-color:rgb(0, 89, 255);
+}
+.btn-1::before,
+.btn-1::after{
+    background-color: rgba(4, 192, 161, 0.733);
+}
+.btn-1:hover{
+    color:white;
+}
+.btn::before{
+    content:'';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 12px);
+    top: -34px;
+    left: -7px;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-5.5deg);
+}
+.btn::after{
+    content:'';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 12px);
+    /* bottom: -118px; */
+    bottom: -34px;
+    right: -9px;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-5.5deg);
+}
+.btn:hover::before{
+    top: -77px;
+}
+.btn:hover::after{
+    bottom: -77px;
+}
+
+@media screen and (max-width: 414px){
+    
+    .left-section,
+    .right-section{
+        width: 100%;
+    }
+    .left-section .welcome-card .logo-heading img{
+        width: 50px;
+        height: 50px;
+    }
+    .left-section .welcome-card .logo-heading .inner-block h1{
+        font-size: 22px;
+    }
+    .list-heading{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .list-points{
+        margin-top: 2px;
+        font-size: 14px;
+        padding-left: 20px;
+    }
+    .left-section{
+        border: none;
+        padding:20px;
+        border-bottom: 1px solid rgb(73, 73, 73);
+    }
+    .login-form-child-container{
+        padding: 10px;
+        display: flex;
+        height: 25rem;
+        width: 25rem;
+        margin: 0px 25px;
+    }
+    .login-form-child-container form{
+        padding: 10px 10px;
+    }
+    .btn-1::after,
+    .btn-1::before{
+        display: none;
+    }
+}

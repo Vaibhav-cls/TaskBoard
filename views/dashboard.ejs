@@ -1,0 +1,96 @@
+<% layout("/layouts/boilerplate") -%>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/userdetails.css">
+    <link rel="stylesheet" href="/css/editTaskBtn.css">
+</head>
+<body>
+    <div class="details-container">
+        <div class="left-card">
+            <p>First name: <%=info.first_name%></p>
+            <p>Last name: <%=info.last_name%></p>
+            <p>Type of user: <%=info.type_of_user%></p>
+            <p>Email: <%=info.email%></p>
+            <p>Phone number: <%=info.phone_number%></p>
+            <div class="action-btn">
+                <a href="/admin/<%=id%>/<%=id2%>/assignTask" class="at-btn">Assign Task</a>
+                <a href="/admin/<%=id%>/<%=id2%>/edit" class="ed-btn">Edit details</a>
+                <form method="POST" action="/admin/<%=id%>/<%=id2%>?_method=DELETE">
+                    <button><i class="fa-regular fa-trash-can"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="right-card">
+            <div class="card">
+                <div class="heading">
+                  <p><i class="fa-solid fa-bars-progress"></i> &nbsp;Task Analysis</p>
+                </div>
+                <div class="task">
+                  <span
+                    >Assigned Task:
+                    <span id="assigned" style="color: #ff9100"
+                      ><%=totalTaskCount%></span
+                    ></span
+                  >
+                  <span
+                    >Completed Task:
+                    <span id="inprogress" style="color: rgb(0, 255, 0)"
+                      ><%=totalTaskCount-inProgressTask%></span
+                    ></span
+                  >
+                </div>
+                <div class="progress">
+                  <p style="font-size: 15px">Progress</p>
+                  <div class="bar">
+                    <div id="meter" class="inner-meter"></div>
+                  </div>
+                  <div class="information">
+                    <p id="result"></p>
+                    <p>
+                      <%=totalTaskCount-inProgressTask %> / <%= totalTaskCount %> Completed
+                    </p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="table-container">
+        <h3>Assigned Task:</h3>
+        <table>
+            <tr>
+                <th>Task Name</th>
+                <th class="description">Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            
+            <% for (t of task) {%>
+                <% if(t.status.toString() === "false") {%>
+                    <tr>
+                        <td><%=t.name%></td>
+                        <td><%=t.description%></td>
+                        <td><%=t.start_date.toString().split(" ").slice(0,4)%></td>
+                        <td><%=t.end_date%></td>
+                        <td class="status">In Progress</td>
+                        <td><a href="/admin/<%=id%>/<%=id2%>/<%=t._id%>/editTask" class="edit"><i class="fa-solid fa-user-pen" title="Edit Task"></i>Edit Task</a></td>
+                    </tr>
+                <% } %>
+            <%}%>
+            <% for (t of task) {%>
+                <% if(t.status.toString() === "true") {%>
+                    <tr>
+                        <td><%=t.name%></td>
+                        <td><%=t.description%></td>
+                        <td><%=t.start_date.toString().split(" ").slice(0,4)%></td>
+                        <td><%=t.end_date%></td>
+                        <td class="status">Completed</td>
+                        <td><a href="/admin/<%=id%>/<%=id2%>/<%=t._id%>/editTask" class="edit"><i class="fa-solid fa-user-pen" title="Edit Task"></i>Edit Task</a></td>
+                    </tr>
+                <% } %>
+            <%}%>
+        </table>
+    </div>
+</body>

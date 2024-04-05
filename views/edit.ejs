@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate") -%>
+  <head>
+    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/new.css">
+    <title>Edit details</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2><i class="fa-solid fa-user-pen"></i> Edit Details</h2>
+      <form method="POST" action="/admin/<%=id%>/<%=info._id%>/edit?_method=PUT">
+        <div class="field">
+          <input type="text" value="<%=info.username%>" name="username" />
+          <label for="username">Username</label>
+        </div>
+        <div class="field">
+          <input type="text" value="<%=info.first_name%>" name="first_name"/>
+          <label for="first_name">First name</label>
+        </div>
+        <div class="field">
+          <input type="text" value="<%=info.last_name%>" name="last_name"/>
+          <label for="last_name">Last name</label>
+        </div>
+        <div class="field">
+          <input type="text" value="<%=info.email%>" name="email"/>
+          <label for="email">Email</label>
+        </div>
+        <div class="field">
+          <input type="text" value="<%=info.password%>" name="password"/>
+          <label for="password">Password</label>
+        </div>
+        <label for="type_of_user" style="display: block;color: #6d6d6d;margin-top: 10px;color: dodgerblue;">Type of user</label>
+        <select id="options" name="type_of_user" title="select the type of user" style="margin-top: 20px;">
+          <option value="normal" style="background-color:  #2c2c2c;">normal</option>
+          <option value="admin" style="background-color:  #2c2c2c;">admin</option>
+        </select>
+        <br>
+        <button>Save Changes</button>
+      </form>
+    </div>
+    
+  </body>
+</html>

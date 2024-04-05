@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.header-left p {
+  color: #9b9b9b;
+  font-size: 17px;
+}
+.header-left h2 {
+  color: white;
+  font-size: 27px;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+.header-right {
+  background-color: #9b9b9b;
+  width: 65px;
+  height: 35px;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 6px;
+  padding-right: 10px;
+  transition: all 0.3s ease;
+}
+.header-right a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  padding-right: 0px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.header-right:hover {
+  background-color: red;
+  width: 90px;
+}
+.header-right .fa-right-from-bracket {
+  margin-left: 10px;
+  color: white;
+  right: 0px;
+}
